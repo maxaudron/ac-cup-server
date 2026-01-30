@@ -80,12 +80,6 @@
                 description = "Path to the storage JSON file.";
               };
 
-              environmentFile = mkOption {
-                type = types.nullOr types.path;
-                default = null;
-                description = "Environment file to load additional configuration from.";
-              };
-
               logLevel = mkOption {
                 type = types.str;
                 default = "info";
@@ -131,8 +125,6 @@
                   STORAGE_PATH = cfg.storagePath;
                   RUST_LOG = "ac_cup_server=${cfg.logLevel},tower_http=${cfg.logLevel},axum=${cfg.logLevel}";
                 };
-
-                inherit (cfg) environmentFile;
               };
             };
           };
