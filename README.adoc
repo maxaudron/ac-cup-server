@@ -1,3 +1,7 @@
+image:https://img.shields.io/badge/git-repo-cba6f7?logo=git[link=https://git.vapor.systems/ac-cup-server.git]
+image:https://img.shields.io/badge/github-repo-blue?logo=github[link=https://github.com/maxaudron/ac-cup-server]
+image:https://img.shields.io/badge/gitlab-repo-orange?logo=github[link=https://gitlab.com/cocainefarm/ac-cup-server]
+
 = Assetto Corsa Content Manage Update Server
 
 This is a small project to act as https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Unrelated-%E2%80%93-About-content-auto-updates-system-(CUP)[CUP] Server that provides automatic update information for Content Manager.
