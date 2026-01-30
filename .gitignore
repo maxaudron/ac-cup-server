@@ -1,2 +1,7 @@
 /target
 /.serena
+
+# Nix
+result
+result-*
+.direnv

@@ -48,12 +48,15 @@ async fn main() {
         .layer(TraceLayer::new_for_http())
         .with_state(shared_storage);
 
+    let host = env::var("HOST")
+        .unwrap_or_else(|_| "0.0.0.0".to_string());
+    
     let port = env::var("PORT")
         .unwrap_or_else(|_| "3000".to_string())
         .parse::<u16>()
         .expect("PORT must be a valid number");
 
-    let addr = format!("0.0.0.0:{}", port);
+    let addr = format!("{}:{}", host, port);
     let listener = tokio::net::TcpListener::bind(&addr)
         .await
         .expect("Failed to bind to address");
