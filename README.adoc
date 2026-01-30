@@ -1,0 +1,53 @@
+= Assetto Corsa Content Manage Update Server
+
+This is a small project to act as https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Unrelated-%E2%80%93-About-content-auto-updates-system-(CUP)[CUP] Server that provides automatic update information for Content Manager.
+
+== API
+=== GET /
+Gives a list of all available cars, tracks, etc. mapped to their version.
+The structure of the API is the same for all types, so this doc will be generic.
+
+  {
+    "car": {
+      "car_name": "1.0"
+    },
+    "track": {}
+    "luaapp": {}
+    "app": {}
+    "filter": {}
+  }
+
+=== GET /<type>/<name>
+  {
+    "name": "",
+    "author": "",
+    "informationUrl": "",
+    "version": "1.0",
+    "active": true,
+    "cleanInstallation": false
+  }
+
+=== GET /<type>/<name>/get
+  HTTP 302 <download url>
+
+== Storage
+
+Data is stored in a single json file:
+
+  {
+    "car": {
+      "<name>": {
+        "name": "",
+        "author": "",
+        "informationUrl": "",
+        "version": "1.0",
+        "active": true,
+        "cleanInstallation": false,
+        "downloadUrl": ""
+      }
+    }
+    "track": {}
+    "luaapp": {}
+    "app": {}
+    "filter": {}
+  }
